@@ -1,0 +1,17 @@
+header{
+    text-align: center;
+}
+body{
+    font-family: monospace;
+}
+main{
+    display: flex;
+    text-align: center;
+}
+h4{
+    flex: 1;
+}
+
+#map{
+    height: 400px;
+}

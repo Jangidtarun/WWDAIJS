@@ -1,0 +1,154 @@
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #dff0ff;
+    min-width: 380px;
+}
+
+header{
+    text-align: center;
+}
+
+main{
+    display: flex;
+    text-align: center;
+    min-width: 400px;
+}
+
+p{
+    /* flex: 1; */
+    margin: 0;
+    margin-inline: 0.5rem;
+}
+
+#city{
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+#lat, #lng{
+    font-family: monospace;
+}
+
+.text-muted{
+    color: #666;
+}
+
+#map{
+    height: 400px;
+}
+
+#wholebody{
+    display: grid;
+    justify-content: center;
+    background-color: aliceblue;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+
+.specialmuted{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: small;
+    text-align: end;
+}
+
+.centeritem{
+    display: grid;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.a3ns0{
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    background-color: aliceblue;
+    padding-right: 1rem;
+}
+
+.a3nlad{
+    display: grid;
+    margin-inline: auto;
+    padding: 0.5rem 1rem;
+}
+
+/* #temprature{
+    font-size: 50px;
+} */
+
+.a3nlad h1{
+    display: inline;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 6rem;
+    color: #666;
+    font-weight: 100;
+}
+
+.e309sj{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    align-items: center;
+}
+
+.e309sjx{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+}
+
+.ra3cr9n{
+    display: flex;
+    background-color: #9191912c;
+    padding: 0.5rem;
+}
+
+.di2938 {
+    color: #004171;
+    display: inline-block;
+    font-size: 12px;
+    padding-left: 9px;
+    padding-top: 6px;
+    text-align: left;
+}
+
+#wob_loc {
+    color: #0463c7;
+    font-size: 30px;
+}
+
+#wob_dts{
+    font-size: 12px;
+    color: #666;
+}
+
+
+.flexy{
+    display: flex;
+    justify-content: space-between;
+    background-color: #00c2d34a;
+    padding-inline: 0.5rem;
+}
+
+.a8nroy3c{
+    display: flex;
+    flex: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.yc9ryq{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+button{
+    /* background-color: #666; */
+    border-radius: 8px;
+    padding: 2px 8px;
+    border: 1px solid #666;
+}

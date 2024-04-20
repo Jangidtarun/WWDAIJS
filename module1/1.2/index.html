@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+    <canvas id="tempchart" width="800">
+
+    </canvas>
+
+    <script>
+
+        var _labels = [];
+        var _temp = [];
+        var _ntemp = [];
+        var _stemp = [];
+
+        const global_mean_temp = 15;
+        async function getcsv(){
+            const response = await fetch('ZonAnn.Ts+dSST.csv');
+            const data = await response.text();
+            // console.log(data);
+
+            const table = data.split('\n').slice(1);
+            // console.log(rows);
+
+            table.forEach(rows => {
+                const cols = rows.split(',');
+                const year = cols[0];
+                const temp = cols[1];
+                const nhem = cols[2];
+                const shem = cols[3];
+                // console.log(row);
+                console.log(year, temp);
+
+                _labels.push(year);
+                _temp.push(parseFloat(temp) + global_mean_temp)
+                _ntemp.push(parseFloat(nhem) + global_mean_temp)
+                _stemp.push(parseFloat(shem) + global_mean_temp)
+            })
+        }
+
+        const ctx = document.getElementById('tempchart');
+
+        async function charIt(){
+            await getcsv();
+            new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: _labels,
+                datasets: [{
+                    label: 'Combined Land-Surface Air and Sea-Surface Water Temperature',
+                    data: _temp,
+                    borderWidth: 1,
+                    fill: false,
+                }, {
+                    label: 'Northern Hemisphere Temprature',
+                    data : _ntemp,
+                    borderWidth: 1,
+                    fill: false,
+                }, {
+                    label: 'Southern Hemisphere Temprature',
+                    data : _stemp,
+                    borderWidth: 1,
+                    fill: false,
+                }]
+            }});
+        }
+
+        charIt();
+    </script>
+</body>
+</html>

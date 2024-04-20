@@ -1,0 +1,22 @@
+{
+  "name": "module3",
+  "version": "1.0.0",
+  "description": "This is the Weather app which is module 3 of the series on DATA and APIs in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "weather",
+    "data",
+    "api"
+  ],
+  "author": "Tarun Jangid",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nedb": "^1.8.0",
+    "node-fetch": "^3.3.2"
+  }
+}

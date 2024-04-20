@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-left: 5rem;
+            margin-right: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array of Images</h1>
+    
+    <script>
+        const filenames = [
+            'Rain-God-Mesa.jpg',
+            'Rice-Paddy.jpg'
+        ];
+
+        getshowpic(filenames)
+        .then(response => {
+            console.log('task complete');
+        })
+        .catch(message => {
+            console.error(message)
+        })
+
+        async function getshowpic(filenames){
+            for(let filename of filenames){
+                const response = await fetch(filename);
+                const blob = await response.blob();
+                
+                const newelem = document.createElement('img');
+                newelem.src = URL.createObjectURL(blob);
+                newelem.width = 400;
+
+                document.body.append(newelem);
+            }
+        }
+
+    </script>
+</body>
+</html>
